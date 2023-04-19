@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace Pokemon
 {
-    internal class Regirock : IPokemon
+    internal class Lucario : IPokemon
     {
         public int Health { get; private set; }
 
-        public Regirock()
+        public Lucario()
         {
-            Health = 120;
+            Health = 80;
         }
 
-        private void StoneEdge(IPokemon otherPokemon)
+        private void ForcePalm(IPokemon otherPokemon)
         {
-            otherPokemon.LooseHealth(15);
+            otherPokemon.LooseHealth(20);
         }
 
         public void Attack(IPokemon otherPokemon)
         {
-            StoneEdge(otherPokemon);
-            Console.WriteLine("Regirock used it's stone edge attack");
+            ForcePalm(otherPokemon);
+            Console.WriteLine("Lucario used it's force palm attack");
         }
 
         public void LooseHealth(int attackDmg)

@@ -8,7 +8,7 @@ namespace Pokemon
 {
     internal interface IPokemon
     {
-        int Health { get; set; }
+        int Health { get; }
 
         void Attack(IPokemon otherPokemon);
         void LooseHealth(int attackDmg);

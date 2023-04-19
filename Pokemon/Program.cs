@@ -4,14 +4,20 @@
     {
         static void Main(string[] args)
         {
-            var regirock = new Regirock();
             var magikarp = new Magikarp();
+            var wildPokemons = new WildPokemons();
+            
+            while (magikarp.Health > 0)
+            {
+                var pokemon = wildPokemons.GetWildPokemon();
 
-            regirock.Attack(magikarp);
-            Console.WriteLine(magikarp.Health);
-            magikarp.Attack(regirock);
-            Console.WriteLine(regirock.Health);
+                pokemon.Attack(magikarp);
 
+                if (magikarp.Health <= 0) break;
+                magikarp.Attack(pokemon);
+            }
+
+            Console.WriteLine("Magikarp is dead... x(");
             Console.ReadKey(true);
         }
     }

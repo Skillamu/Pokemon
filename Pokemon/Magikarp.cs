@@ -8,12 +8,12 @@ namespace Pokemon
 {
     internal class Magikarp : IPokemon
     {
-        public int Health { get; set; }
-        public bool IsUseless { get; set; }
+        public int Health { get; private set; }
+        public bool IsUseless { get; }
 
         public Magikarp()
         {
-            Health = 30;
+            Health = 50;
             IsUseless = true; // literally useless
         }
 
@@ -25,6 +25,7 @@ namespace Pokemon
         public void Attack(IPokemon otherPokemon)
         {
             Splash(otherPokemon);
+            Console.WriteLine("Magikarp used it's splash attack");
         }
 
         public void LooseHealth(int attackDmg)
